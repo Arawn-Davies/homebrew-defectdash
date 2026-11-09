@@ -15,7 +15,15 @@ qualified name for casks from untrusted-by-default taps, hence the long form.
 
 Installs `DefectDash.app` into Applications and the `defectdash` terminal UI onto your
 path. The build is ad-hoc signed (not notarized); the cask removes the quarantine
-flag after install so the app opens normally. If you prefer to keep Homebrew's
-default behaviour, install with `--no-quarantine` yourself instead.
+flag from both the app and the terminal binary after install so they run normally.
+If you prefer to keep Homebrew's default behaviour, install with `--no-quarantine`
+yourself instead.
+
+If Gatekeeper still refuses `defectdash`, clear the flag on the real file (the `bin`
+entry is a symlink into the Caskroom):
+
+```sh
+xattr -d com.apple.quarantine "$(brew --prefix)/Caskroom/defectdash/$(brew list --cask --versions defectdash | cut -d' ' -f2)/defectdash"
+```
 
 Upgrade with `brew upgrade --cask defectdash`.
