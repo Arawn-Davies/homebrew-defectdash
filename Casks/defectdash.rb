@@ -1,6 +1,6 @@
 cask "defectdash" do
-  version "0.0.5"
-  sha256 "c08c006753b7578dd03a915df19f7944e14ecacbd80dc61bb1ee91cb41e3433a"
+  version "0.0.6"
+  sha256 "1d5f0d68c0069748ec86a9d130d1deb33e734c14cc52bf9d3a77d19cf1de9d9a"
 
   url "https://github.com/Arawn-Davies/DefectDash/releases/download/v#{version}/DefectDash-#{version}-macos-arm64.zip"
   name "DefectDash"
